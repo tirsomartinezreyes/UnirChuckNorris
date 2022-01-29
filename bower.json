@@ -1,0 +1,19 @@
+{
+  "name": "UnirChuckNorris",
+  "homepage": "https://github.com/tirsomartinezreyes/UnirChuckNorris",
+  "authors": [
+    "tirsomartinezreyes <tirsomartinezreyes@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chuck-norris-joke": "^1.2.0"
+  }
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Unir - Laboratorio: Computación en cliente web </title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script>
+            function getRandomImage(){
+                //Images from https://freepngimg.com/
+                let images = [
+                    '20270-5-chuck-norris-transparent-background.png',
+                    '97549-chuck-norris-free-hd-image.png',
+                    '97558-chuck-norris-download-free-image.png',
+                    '97528-cowboy-chuck-norris-download-free-image.png',
+                    '97536-photos-cowboy-chuck-norris-download-hd.png',
+                    '97531-cowboy-chuck-norris-free-png-hq.png',
+                    '97552-chuck-norris-free-hd-image.png',
+                    '97566-images-chuck-norris-free-download-image.png',
+                    '37468-5-chuck-norris.png',
+                    '20333-5-chuck-norris-file.png',
+                    '20625-6-chuck-norris-clipart.png',
+                    '20311-5-chuck-norris-transparent-image.png',
+                    '37559-5-chuck-norris-hd.png',
+                    '37613-5-chuck-norris-photos.png',
+                ];
+
+                let image = images[Math.floor(Math.random()*images.length)];
+                return "images/"+image;
+            }            
+        </script>
+        <script id="chuckScript">
+            function getRandomJokes(){
+                fetch('http://api.icndb.com/jokes/random/10')
+                .then(response => response.json())
+                .then(response => {
+                    $('#list').html('');
+                    $('#chuckImage').attr("src",getRandomImage());
+                    $('#chuckCode').text($('#chuckScript').text())
+                    response.value.forEach(element => { $("#list").append(
+                        `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">${element.joke}</h5>
+                                <small>${element.id}</small>
+                            </div>
+                        </a>`
+                        ); 
+                    });
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-12">
+                    <p class="lead text-center">
+                        <a class="btn btn-primary btn-lg" href="#" onclick="getRandomJokes()" role="button">Get Random Jokes</a>
+                        <a class="btn btn-secondary btn-lg" href="index.html" role="button">Inicio</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="list-group" id="list">
+
+                    </div>
+                </div>
+                <div class="col-4">
+                    <img id="chuckImage" width="100%"/>                    
+                    <code id="chuckCode"></code>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Unir - Laboratorio: Computación en cliente web </title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="import" href="bower_components/chuck-norris-joke/chuck-norris-joke.html">
+        <script>
+            function getRandomImage(){
+                //Images from https://freepngimg.com/
+                let images = [
+                    '20270-5-chuck-norris-transparent-background.png',
+                    '97549-chuck-norris-free-hd-image.png',
+                    '97558-chuck-norris-download-free-image.png',
+                    '97528-cowboy-chuck-norris-download-free-image.png',
+                    '97536-photos-cowboy-chuck-norris-download-hd.png',
+                    '97531-cowboy-chuck-norris-free-png-hq.png',
+                    '97552-chuck-norris-free-hd-image.png',
+                    '97566-images-chuck-norris-free-download-image.png',
+                    '37468-5-chuck-norris.png',
+                    '20333-5-chuck-norris-file.png',
+                    '20625-6-chuck-norris-clipart.png',
+                    '20311-5-chuck-norris-transparent-image.png',
+                    '37559-5-chuck-norris-hd.png',
+                    '37613-5-chuck-norris-photos.png',
+                ];
+
+                let image = images[Math.floor(Math.random()*images.length)];
+                return "images/"+image;
+            }            
+        </script>
+        <script id="chuckScript">
+            function getRandomJokes(){
+                document.getElementById('chuckImage').setAttribute("src",getRandomImage())
+            }
+        </script>
+    </head>
+
+    <body>
+        <chuck-norris-joke></chuck-norris-joke>
+    </body>
+</html>
