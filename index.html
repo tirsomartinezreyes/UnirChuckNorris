@@ -1,21 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Unir - Laboratorio: Computación en cliente web </title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<title>Unir - Laboratorio: Computación en cliente web</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </head>
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
 
-    <body>
+		<style>
+            body{
+                background-color: black !important;
+            }
+			/* Referencia de: https://bootsnipp.com/snippets/nNoMz */
+			.row.heading h2 {
+				color: #fff;
+				font-size: 52.52px;
+				line-height: 95px;
+				font-weight: 400;
+				text-align: center;
+				margin: 0 0 40px;
+				padding-bottom: 20px;
+				text-transform: uppercase;
+			}
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.heading.heading-icon {
+				display: block;
+			}
+
+			.padding-lg {
+				display: block;
+				padding-top: 60px;
+				padding-bottom: 60px;
+			}
+
+			.practice-area.padding-lg {
+				padding-bottom: 55px;
+				padding-top: 55px;
+			}
+
+			.practice-area .inner {
+				border: 1px solid #999999;
+				text-align: center;
+				margin-bottom: 28px;
+				padding: 40px 25px;
+			}
+
+			.our-webcoderskull .cnt-block:hover {
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				border: 0;
+			}
+
+			.practice-area .inner h3 {
+				color: #3c3c3c;
+				font-size: 24px;
+				font-weight: 500;
+				font-family: 'Poppins', sans-serif;
+				padding: 10px 0;
+			}
+
+			.practice-area .inner p {
+				font-size: 14px;
+				line-height: 22px;
+				font-weight: 400;
+			}
+
+			.practice-area .inner img {
+				display: inline-block;
+			}
+
+			.our-webcoderskull {
+				background: url('http://www.webcoderskull.com/img/right-sider-banner.png') no-repeat center top / cover;
+			}
+
+			.our-webcoderskull .cnt-block {
+				float: left;
+				width: 100%;
+				background: #fff;
+				padding: 30px 20px;
+				text-align: center;
+				border: 2px solid #d5d5d5;
+				margin: 0 0 28px;
+			}
+
+			.our-webcoderskull .cnt-block figure {
+				width: 148px;
+				/*height: 148px;*/
+				border-radius: 100%;
+				display: inline-block;
+				margin-bottom: 15px;
+			}
+
+			.our-webcoderskull .cnt-block img {
+				width: 148px;
+				height: 148px;
+				border-radius: 100%;
+			}
+
+			.our-webcoderskull .cnt-block h3 {
+				color: #2a2a2a;
+				font-size: 20px;
+				font-weight: 500;
+				padding: 6px 0;
+				text-transform: uppercase;
+			}
+
+			.our-webcoderskull .cnt-block h3 a {
+				text-decoration: none;
+				color: #2a2a2a;
+			}
+
+			.our-webcoderskull .cnt-block h3 a:hover {
+				color: #337ab7;
+			}
+
+			.our-webcoderskull .cnt-block p {
+				color: #2a2a2a;
+				font-size: 13px;
+				line-height: 20px;
+				font-weight: 400;
+			}
+
+			.our-webcoderskull .cnt-block .follow-us {
+				margin: 20px 0 0;
+			}
+
+			.our-webcoderskull .cnt-block .follow-us li {
+				display: inline-block;
+				width: auto;
+				margin: 0 5px;
+			}
+
+			.our-webcoderskull .cnt-block .follow-us li .fa {
+				font-size: 24px;
+				color: #767676;
+			}
+
+			.our-webcoderskull .cnt-block .follow-us li .fa:hover {
+				color: #025a8e;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--
         <div class="row text-center">
             <div class="col-2">
                 <a href="chuck2005.html">
@@ -54,5 +207,71 @@
                 </a>
             </div>
         </div>
-    </body>
+        -->
+
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!------ Include the above in your HEAD tag ---------->
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+		<section class="our-webcoderskull padding-lg">
+			<div class="container">
+				<div class="row heading heading-icon">
+					<h2>Chuck Norris Jokes</h2>
+				</div>
+				<ul class="row">
+					<li class="col-12 col-md-6 col-lg-4">
+						<div class="cnt-block equal-hight" style="height: 349px">
+							<a href="chuck2005.html">
+								<figure><img src="images/97566-images-chuck-norris-free-download-image.png" class="" alt="" /></figure>
+								<h3>2005</h3>
+							</a>
+						</div>
+					</li>
+					<li class="col-12 col-md-6 col-lg-4">
+						<div class="cnt-block equal-hight" style="height: 349px">
+							<a href="chuck2006.html">
+								<figure><img src="images/37468-5-chuck-norris.png" class="" alt="" /></figure>
+								<h3>2006</h3>
+							</a>
+						</div>
+					</li>
+					<li class="col-12 col-md-6 col-lg-4">
+						<div class="cnt-block equal-hight" style="height: 349px">
+							<a href="chuckPlugin.html">
+								<figure><img src="images/20270-5-chuck-norris-transparent-background.png" class="" alt="" /></figure>
+								<h3>jQuery Plugin</h3>
+							</a>
+						</div>
+					</li>
+                    <li class="col-12 col-md-6 col-lg-4">
+						<div class="cnt-block equal-hight" style="height: 349px">
+							<a href="chuck2014.html">
+								<figure><img src="images/97558-chuck-norris-download-free-image.png" class="" alt="" /></figure>
+								<h3>2014</h3>
+							</a>
+						</div>
+					</li>
+					<li class="col-12 col-md-6 col-lg-4">
+						<div class="cnt-block equal-hight" style="height: 349px">
+							<a href="chuckNode.html">
+								<figure><img src="images/97536-photos-cowboy-chuck-norris-download-hd.png" class="" alt="" /></figure>
+								<h3>Node</h3>
+							</a>
+						</div>
+					</li>
+					<li class="col-12 col-md-6 col-lg-4">
+						<div class="cnt-block equal-hight" style="height: 349px">
+							<a href="chuckWebComponents.html">
+								<figure><img src="images/97552-chuck-norris-free-hd-image.png" class="" alt="" /></figure>
+								<h3>Web Components</h3>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</body>
 </html>

@@ -5,8 +5,8 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link rel="import" href="bower_components/chuck-norris-joke/chuck-norris-joke.html">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+        <script src="components/chuck-norris-joke/chuck-norris-joke.js" defer></script>
         <script>
             function getRandomImage(){
                 //Images from https://freepngimg.com/
@@ -29,16 +29,67 @@
 
                 let image = images[Math.floor(Math.random()*images.length)];
                 return "images/"+image;
-            }            
-        </script>
-        <script id="chuckScript">
-            function getRandomJokes(){
+            }    
+            
+            function changeImage(){
                 document.getElementById('chuckImage').setAttribute("src",getRandomImage())
             }
         </script>
+        <style>
+            body{
+                background-color: black !important;
+            }
+        </style>
     </head>
 
-    <body>
-        <chuck-norris-joke></chuck-norris-joke>
+    <body onload="changeImage()">
+        <!--Tomando como referencia https://github.com/mdn/web-components-examples/tree/master/simple-template-->
+        <template id="chuck-norris-joke">
+            <style>
+                p {
+                    color: black;
+                    background-color: #CCC;
+                    padding: 15px;
+                    margin: 15px;
+                    border-radius: 5px;
+                    min-width: 100px;
+                }
+                
+                div{
+                    color:rgba(255, 0, 0, 0.466);
+                    margin-bottom:15px;
+                    font-size: small;
+                }
+            </style>
+        </template>
+
+        <div class="pure-g">
+            <div class="pure-u-24-24" style="text-align: center;">
+                <hr class="my-2">
+                    <a class="pure-button pure-button-primary" href="#" onclick="location.reload()">Recargar</a>
+                    <a class="pure-button pure-button-active" href="index.html">Inicio</a>
+                <hr class="my-2">
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-12-24">
+                <chuck-norris-joke></chuck-norris-joke>
+                <chuck-norris-joke firstName="Tim" lastName="Berners-Lee"></chuck-norris-joke>
+                <chuck-norris-joke joke-id="80"></chuck-norris-joke>
+                <chuck-norris-joke></chuck-norris-joke>
+                <chuck-norris-joke></chuck-norris-joke>
+                <chuck-norris-joke></chuck-norris-joke>
+                <chuck-norris-joke></chuck-norris-joke>
+                <chuck-norris-joke></chuck-norris-joke>
+                <chuck-norris-joke></chuck-norris-joke>
+                <chuck-norris-joke></chuck-norris-joke>
+            </div>
+            <div class="pure-u-1-24"></div>
+            <div class="pure-u-11-24">
+                <img id="chuckImage" src="" width="100%" style="margin-right:15px;"/>
+            </div>
+        </div>
+
     </body>
 </html>
